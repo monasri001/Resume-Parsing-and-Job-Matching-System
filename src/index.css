@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 25% 6%;
+    --foreground: 210 40% 92%;
+
+    --card: 225 25% 10%;
+    --card-foreground: 210 40% 92%;
+
+    --popover: 225 25% 10%;
+    --popover-foreground: 210 40% 92%;
+
+    --primary: 200 100% 55%;
+    --primary-foreground: 225 25% 6%;
+
+    --secondary: 260 80% 60%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 225 20% 16%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 170 80% 45%;
+    --accent-foreground: 225 25% 6%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 225 20% 18%;
+    --input: 225 20% 18%;
+    --ring: 200 100% 55%;
+
+    --radius: 0.75rem;
+
+    --glow-primary: 200 100% 55%;
+    --glow-secondary: 260 80% 60%;
+    --glow-accent: 170 80% 45%;
+
+    --surface-glass: 225 25% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-xl;
+    box-shadow:
+      0 0 30px -10px hsl(var(--glow-primary) / 0.15),
+      0 20px 60px -20px hsl(0 0% 0% / 0.5),
+      inset 0 1px 0 0 hsl(0 0% 100% / 0.05);
+  }
+
+  .glass-card-accent {
+    @apply bg-card/40 backdrop-blur-xl border border-primary/20 rounded-xl;
+    box-shadow:
+      0 0 40px -10px hsl(var(--glow-primary) / 0.2),
+      0 20px 60px -20px hsl(0 0% 0% / 0.6),
+      inset 0 1px 0 0 hsl(var(--primary) / 0.1);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--secondary)),
+      hsl(var(--accent))
+    );
+  }
+
+  .glow-sm {
+    box-shadow: 0 0 20px -5px hsl(var(--glow-primary) / 0.3);
+  }
+
+  .glow-md {
+    box-shadow: 0 0 40px -10px hsl(var(--glow-primary) / 0.4);
+  }
+
+  .bg-grid-3d {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotateX(0deg); }
+  50% { transform: translateY(-10px) rotateX(2deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+.animate-slide-up { animation: slide-up 0.6s ease-out forwards; }
