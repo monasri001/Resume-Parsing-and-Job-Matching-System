@@ -1,77 +1,88 @@
 export const SKILL_DICTIONARY: string[] = [
   // Programming Languages
-  "java", "python", "javascript", "typescript", "c++", "c#", "c", "go", "golang",
-  "rust", "ruby", "php", "swift", "kotlin", "scala", "r", "matlab", "perl",
-  "objective-c", "dart", "lua", "haskell", "elixir", "clojure", "groovy",
-  
+  "java", "python", "javascript", "typescript", "c++", "c#", 
+  "go", "golang", "rust", "ruby", "php", "swift", "kotlin", 
+  "scala", "matlab", "perl", "objective-c", "dart", "lua",
+  "haskell", "elixir", "clojure", "groovy",
+
   // Frontend
-  "react", "angular", "vue", "vue.js", "svelte", "next.js", "nextjs", "nuxt.js",
-  "gatsby", "html", "css", "sass", "scss", "less", "tailwind", "tailwindcss",
-  "bootstrap", "material ui", "chakra ui", "jquery", "redux", "mobx", "zustand",
-  "webpack", "vite", "babel", "storybook",
-  
+  "react", "angular", "vue", "vue.js", "svelte", "next.js", "nextjs",
+  "nuxt.js", "gatsby", "html", "css", "sass", "scss", "less",
+  "tailwind", "tailwindcss", "bootstrap", "material ui", "chakra ui",
+  "jquery", "redux", "mobx", "zustand", "webpack", "vite", "babel", "storybook",
+
   // Backend
   "node.js", "nodejs", "express", "express.js", "django", "flask", "fastapi",
-  "spring", "spring boot", "springboot", ".net", "asp.net", "laravel", "rails",
-  "ruby on rails", "gin", "fiber", "nestjs", "nest.js", "koa", "hapi",
-  
+  "spring", "spring boot", "springboot", ".net", "asp.net", "laravel",
+  "rails", "ruby on rails", "nestjs", "nest.js", "koa", "hapi",
+
   // Databases
-  "sql", "mysql", "postgresql", "postgres", "mongodb", "redis", "elasticsearch",
-  "cassandra", "dynamodb", "oracle", "sqlite", "mariadb", "couchdb", "neo4j",
-  "firebase", "firestore", "supabase",
-  
+  "sql", "mysql", "postgresql", "postgres", "mongodb", "redis",
+  "elasticsearch", "cassandra", "dynamodb", "oracle", "sqlite",
+  "mariadb", "couchdb", "neo4j", "firebase", "firestore", "supabase",
+
   // Cloud & DevOps
   "aws", "azure", "gcp", "google cloud", "docker", "kubernetes", "k8s",
-  "terraform", "ansible", "jenkins", "ci/cd", "github actions", "gitlab ci",
-  "circleci", "travis ci", "nginx", "apache", "linux", "unix", "bash",
-  "shell scripting", "prometheus", "grafana", "datadog", "new relic",
-  
+  "terraform", "ansible", "jenkins", "ci/cd", "github actions",
+  "gitlab ci", "circleci", "travis ci", "nginx", "apache",
+  "linux", "unix", "bash", "shell scripting", "prometheus",
+  "grafana", "datadog", "new relic",
+
   // Data & ML
   "machine learning", "deep learning", "tensorflow", "pytorch", "keras",
-  "scikit-learn", "pandas", "numpy", "spark", "hadoop", "hive", "airflow",
-  "kafka", "rabbitmq", "data science", "nlp", "computer vision", "tableau",
-  "power bi", "etl",
-  
+  "scikit-learn", "pandas", "numpy", "spark", "hadoop", "hive",
+  "airflow", "kafka", "rabbitmq", "data science", "nlp",
+  "computer vision", "tableau", "power bi", "etl",
+
   // Mobile
-  "react native", "flutter", "android", "ios", "swiftui", "xamarin",
-  "ionic", "cordova",
-  
+  "react native", "flutter", "android", "ios", "swiftui",
+  "xamarin", "ionic", "cordova",
+
   // APIs & Protocols
-  "rest api", "restful", "graphql", "grpc", "websocket", "soap", "oauth",
-  "jwt", "api gateway",
-  
+  "rest api", "restful", "graphql", "grpc", "websocket",
+  "soap", "oauth", "jwt", "api gateway",
+
   // Architecture
-  "microservices", "monolithic", "serverless", "event-driven", "mvc",
-  "mvvm", "clean architecture", "domain-driven design", "ddd",
-  
+  "microservices", "monolithic", "serverless", "event-driven",
+  "mvc", "mvvm", "clean architecture", "domain-driven design", "ddd",
+
   // Testing
-  "jest", "mocha", "chai", "cypress", "selenium", "junit", "pytest",
-  "testng", "cucumber", "playwright", "vitest",
-  
+  "jest", "mocha", "chai", "cypress", "selenium",
+  "junit", "pytest", "testng", "cucumber", "playwright", "vitest",
+
   // Tools
-  "git", "github", "gitlab", "bitbucket", "jira", "confluence",
-  "slack", "figma", "postman", "swagger", "openapi",
-  
+  "git", "github", "gitlab", "bitbucket", "jira",
+  "confluence", "slack", "figma", "postman", "swagger", "openapi",
+
   // Other
-  "agile", "scrum", "kanban", "devops", "sre", "blockchain",
-  "web3", "solidity", "security", "penetration testing",
-  "data structures", "algorithms", "system design", "oop",
-  "functional programming", "design patterns",
+  "agile", "scrum", "kanban", "devops", "sre",
+  "blockchain", "web3", "solidity", "security",
+  "penetration testing", "data structures", "algorithms",
+  "system design", "oop", "functional programming", "design patterns"
 ];
 
+/**
+ * 🚀 FINAL SKILL MATCHER (ACCURATE VERSION)
+ */
 export function findSkills(text: string): string[] {
-  const lowerText = text.toLowerCase();
+  // 🔥 CLEAN TEXT (VERY IMPORTANT FOR PDF INPUT)
+  const cleanText = text
+    .toLowerCase()
+    .replace(/[^a-z0-9+#.\s]/g, ' ')  // remove weird chars
+    .replace(/\s+/g, ' ');
+
   const found: string[] = [];
-  
+
   for (const skill of SKILL_DICTIONARY) {
     const escaped = skill.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const regex = new RegExp(`(?:^|[\\s,;|/()\\[\\]])${escaped}(?:[\\s,;|/()\\[\\]]|$)`, 'i');
-    if (regex.test(lowerText) || lowerText.includes(skill.toLowerCase())) {
-      if (!found.includes(skill)) {
-        found.push(skill);
-      }
+
+    // ✅ STRICT WORD MATCH (NO FALSE POSITIVES)
+    const regex = new RegExp(`\\b${escaped}\\b`, 'i');
+
+    if (regex.test(cleanText)) {
+      found.push(skill);
     }
   }
-  
-  return found;
+
+  return [...new Set(found)]; // remove duplicates
 }
