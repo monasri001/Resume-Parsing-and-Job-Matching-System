@@ -23,12 +23,12 @@ Built strictly with robust regex rules and structural parsing (no external LLMs 
 
 
 ### Match Results & Analytics
-![Match Results Overview](<img width="1904" height="919" alt="image" src="https://github.com/user-attachments/assets/01229822-e9c3-448d-b77c-4f610c911352" />)
-*Reviewing a candidate's eligibility and granular skill match percentages.*
+<img width="1919" height="967" alt="image" src="https://github.com/user-attachments/assets/480ade40-b035-4fe1-a29b-4a0c076b4531" />
 
-### Detailed Experience Tracking
-![Experience Extraction](<img width="1904" height="920" alt="image" src="https://github.com/user-attachments/assets/2774bd44-d9c6-413d-acff-7320eecbcbce" />)
-*Accurate numeric duration calculation avoiding formatting conflicts.*
+
+### Detailed Tracking
+<img width="1919" height="969" alt="image" src="https://github.com/user-attachments/assets/582677f5-fa87-44ba-88e4-687b9403ac24" />
+
 
 ---
 
