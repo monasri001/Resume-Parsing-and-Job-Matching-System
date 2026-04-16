@@ -19,15 +19,15 @@ Built strictly with robust regex rules and structural parsing (no external LLMs 
 *(Replace the placeholder links below with actual images of your application)*
 
 ### Dashboard & Sample JD Loader
-![Dashboard & JD Input](docs/images/dashboard.png)
+![Dashboard & JD Input](<img width="1912" height="914" alt="image" src="https://github.com/user-attachments/assets/bf74d017-a8b2-46e8-a77a-6922719e2373" />)
 *Loading one of the 15 pre-built sample JDs seamlessly.*
 
 ### Match Results & Analytics
-![Match Results Overview](docs/images/match-results.png)
+![Match Results Overview](<img width="1904" height="919" alt="image" src="https://github.com/user-attachments/assets/01229822-e9c3-448d-b77c-4f610c911352" />)
 *Reviewing a candidate's eligibility and granular skill match percentages.*
 
 ### Detailed Experience Tracking
-![Experience Extraction](docs/images/experience-parsing.png)
+![Experience Extraction](<img width="1904" height="920" alt="image" src="https://github.com/user-attachments/assets/2774bd44-d9c6-413d-acff-7320eecbcbce" />)
 *Accurate numeric duration calculation avoiding formatting conflicts.*
 
 ---
