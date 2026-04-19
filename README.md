@@ -16,8 +16,6 @@ Built strictly with robust regex rules and structural parsing (no external LLMs 
 
 ## 📸 Application Screenshots
 
-*(Replace the placeholder links below with actual images of your application)*
-
 ### Dashboard & Sample JD Loader
 <img width="1918" height="966" alt="image" src="https://github.com/user-attachments/assets/1cc2838a-0c5c-44ed-9154-7cf0acd7f3ef" />
 
