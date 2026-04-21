@@ -1,5 +1,7 @@
 # Resume Parsing and Job Matching System
 
+production app : live 
+
 A smart, rule-based web application that dramatically simplifies the recruitment process by automatically parsing candidate resumes, extracting core professional attributes, and scoring them directly against specific Job Description (JD) requirements. 
 
 Built strictly with robust regex rules and structural parsing (no external LLMs or black-box AI dependencies), this system delivers fully deterministic, fast, and fully transparent matching results.
