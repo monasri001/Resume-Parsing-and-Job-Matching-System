@@ -74,6 +74,4 @@ To run this project locally, ensure you have [Node.js](https://nodejs.org/) inst
 
 ---
 
-## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](../../issues).
