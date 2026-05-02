@@ -1,6 +1,6 @@
 # Resume Parsing and Job Matching System
 
-production app : live 
+production app : live https://syncmatrix.vercel.app
 
 A smart, rule-based web application that dramatically simplifies the recruitment process by automatically parsing candidate resumes, extracting core professional attributes, and scoring them directly against specific Job Description (JD) requirements. 
 
